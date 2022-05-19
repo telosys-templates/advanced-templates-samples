@@ -1,4 +1,4 @@
-# Examples of advanced templates 
+# Examples of advanced features usable in templates
 
 This bundle contains examples to illustrate many advanced features.
 
