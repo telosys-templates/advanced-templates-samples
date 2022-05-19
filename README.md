@@ -1,6 +1,10 @@
-Set of advanced templates using ...
+# Examples of advanced templates 
 
-- $loader to use specific Java classes in the templates 
-  NB : Java classes must be compiled with "build.xml" ant file before launching the generation
+This bundle contains examples to illustrate many advanced features 
 
-- $generator to launch the generator from a template file
+- **$loader**  to use specific Java classes in the templates 
+  NB : Java classes must be compiled before launching the generation (with "build.xml" ant file or with "compile.[bat/sh]" file)
+
+- **$generator** to launch the generator from a template file
+
+
