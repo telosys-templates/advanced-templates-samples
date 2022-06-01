@@ -1,0 +1,79 @@
+/*
+ * Generated on $now.date ( $now.time ) by $generator.name version $generator.version
+ */
+
+Examples of 'MAP' usage 
+==================================
+#set( $map = {
+ "A": "aaa",
+ "B": "bbb",
+ "C": "ccc"
+ } )
+---------------------------------------
+
+Print map content and map size
+ - ${DOLLAR}map        : $map 
+ - ${DOLLAR}map.size() : $map.size() 
+
+---------------------------------------
+
+Get value by key :
+
+- ${DOLLAR}map["A"] : $map["A"]
+## ERROR if key not defined in the map
+## - ${DOLLAR}map["Z"] : $map["Z"]
+
+- ${DOLLAR}map.get("A") : $map.get("A")
+## ERROR if key not defined in the map
+## - ${DOLLAR}map.get("Z") : $map.get("Z")
+
+---------------------------------------
+
+Get value by key with default value :
+
+- ${DOLLAR}map.getOrDefault("A", "?") : $map.getOrDefault("A", "?")
+- ${DOLLAR}map.getOrDefault("Z", "?") : $map.getOrDefault("Z", "?")
+#set( $k = "A")
+#set( $dv = "A-default")
+- ${DOLLAR}map.getOrDefault(${DOLLAR}k, ${DOLLAR}dv) : $map.getOrDefault($k, $dv)
+#set( $k = "Z")
+#set( $dv = "Z-default")
+- ${DOLLAR}map.getOrDefault(${DOLLAR}k, ${DOLLAR}dv) : $map.getOrDefault($k, $dv)
+
+---------------------------------------
+
+Check key existence :
+- ${DOLLAR}map.containsKey("A") : $map.containsKey("A")
+- ${DOLLAR}map.containsKey("Z") : $map.containsKey("Z")
+
+---------------------------------------
+
+Remove :
+
+## remove by key
+#set($key = "A")
+#set( $_ = $map.remove($key))## not secure
+#if($map.containsKey($key))#set($_=$map.remove($key))#end
+#if($map.containsKey($key))#set($_=$map.remove($key))#end
+## if no key in map => return null => error
+## #set( $_ = "$map.remove($key)" )
+## workaround with #if directive 
+## (https://cwiki.apache.org/confluence/display/velocity/CheckingForNull):
+#if("$map.remove($key)")#end
+#if("$map.remove($key)")#end
+##
+## remove by key and value
+#set( $_ = $map.remove("B", "bbb") )
+#set( $_ = $map.remove("B", "bbb") )
+## remove result : $map.remove("B", "bbb") ## true
+## remove result : $map.remove("B", "bbb") ## false
+##
+ - ${DOLLAR}map        : $map 
+ - ${DOLLAR}map.size() : $map.size() 
+---------------------------------------
+
+Clear all :
+
+ - ${DOLLAR}map.clear(): /$map.clear()/
+ - ${DOLLAR}map        : $map 
+ - ${DOLLAR}map.size() : $map.size() 

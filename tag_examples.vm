@@ -1,0 +1,25 @@
+/*
+ * Generated on $now.date ( $now.time ) by $generator.name version $generator.version
+ */
+
+Examples of 'TAGS' usage for entity : $entity.name
+
+// Invalid usage
+${DOLLAR}entity.hasTag(OtherName)   : $entity.hasTag(OtherName)
+// Valid usage
+${DOLLAR}entity.hasTag('OtherName') : $entity.hasTag('OtherName')
+${DOLLAR}entity.hasTag("OtherName") : $entity.hasTag("OtherName")
+
+#if ( $entity.hasTag('OtherName') )
+// Invalid usage
+${DOLLAR}entity.tagValue(OtherName)   : $entity.tagValue(OtherName)
+// Valid usage
+${DOLLAR}entity.tagValue('OtherName') : $entity.tagValue('OtherName')
+${DOLLAR}entity.tagValue("OtherName") : $entity.tagValue("OtherName")
+#else
+// No tag 
+#end
+
+// Valid usage
+${DOLLAR}entity.tagValue('OtherName', ${DOLLAR}entity.name) : $entity.tagValue('OtherName', $entity.name)
+${DOLLAR}entity.tagValue("OtherName", ${DOLLAR}entity.name) : $entity.tagValue("OtherName", $entity.name)
