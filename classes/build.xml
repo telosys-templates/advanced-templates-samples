@@ -11,7 +11,7 @@
 	</path>
 
 	<target name="compile" description="Compile Java classes" >
-		<javac includeantruntime="false" srcdir="." destdir="." target="1.6" source="1.6">
+		<javac includeantruntime="false" srcdir="." destdir="." target="1.8" source="1.8">
 			<classpath refid="compile.classpath"/>
 		</javac>
 	</target>
