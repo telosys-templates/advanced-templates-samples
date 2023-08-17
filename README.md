@@ -1,7 +1,7 @@
 Set of advanced templates examples 
 
-- $loader : how to use specific Java classes in the templates (Java sources are in "classes" folder)
-  Java classes can be compiled with "build.xml" ant file or with "compile.sh|bat"   
+- $loader : how to use specific Java classes in the templates   
+  (Java sources are in "classes" folder and can be compiled with "build.xml" ant file or with "compile.sh|bat")   
   - MyData.java (in default Java package)   
   - org.foo.FooData.java   
   - MyFooClass.java (using Apache-Commons classes located in lib/commons-lang3-3.4.jar)   
